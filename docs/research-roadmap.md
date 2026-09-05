@@ -4,31 +4,42 @@ Embodied Companion Health crosses AI, HCI, robotics, privacy, safety, maintenanc
 
 The roadmap is intentionally reduced to **four stages**.
 
-## Stage A — Software validation
+## Stage A — Software and simulated-embodiment validation
 
 **Goal:** test the core hypotheses without building a robot.
+
+The preferred first demonstrator is a low-cost avatar-based simulation rather than a text-only chatbot. Unity, Unreal Engine, or an AITuber / virtual-avatar stack may be used, but the engine itself is not the research contribution. The implementation should be chosen for speed, inspectability, and experimental control.
 
 Prototype areas:
 
 - conversational companion behavior;
+- simple 2D/3D avatar expression, gaze, posture, and voice;
 - minimal persistent state for continuity;
+- a small set of routine contexts such as waking, work, meals, rest, and bedtime;
 - explicit consent and permission state;
 - user-controlled personal baselines using synthetic or manually entered data;
 - uncertainty-aware wellbeing summaries;
-- simulation of model upgrades and relationship-state migration.
+- simulation of model upgrades and relationship-state migration;
+- event logging for continuity, refusal, permission, proactivity, and contradiction analysis.
 
 Key questions:
 
-- Does persistent state measurably improve continuity?
+- Does persistent state measurably improve continuity over a stateless baseline?
+- Does visible multimodal embodiment add useful cues before physical hardware is introduced?
 - Can proactive support remain useful without becoming annoying or paternalistic?
 - Can users understand and revoke permissions easily?
 - Can a model change occur without making the companion feel unrelated?
+- Can behavior, permissions, and baseline-aware prompts be evaluated without collecting unnecessary raw media?
 
-**Exit criterion:** demonstrate that continuity, consent, and baseline support create measurable value before physical embodiment is added.
+Explicit non-goals at this stage include photorealism, VR/AR, robotics, real medical sensors, autonomous diagnosis, detailed artificial physiology, adult intimate simulation, complex simulated psychology, and large-scale memory systems.
+
+See [`simulation-prototype.md`](simulation-prototype.md) for the minimal experiment design.
+
+**Exit criterion:** demonstrate that continuity, consent, baseline support, and avatar-based multimodal behavior create measurable value before physical embodiment is added.
 
 ## Stage B — Low-risk embodied HCI
 
-**Goal:** determine where physical presence adds value that software alone cannot provide.
+**Goal:** determine where physical presence adds value that software or simulated embodiment cannot provide.
 
 Prototype areas may include:
 
@@ -42,12 +53,13 @@ Prototype areas may include:
 
 Key questions:
 
-- Which interactions genuinely benefit from a body?
+- Which interactions genuinely benefit from a physical body?
 - What latency and compliance feel natural enough to justify hardware complexity?
 - How should the system signal approach, refusal, pause, and disengagement?
 - Can physical safety remain independent of the generative model?
+- Which apparent benefits from Stage A disappear or change when real physical contact is introduced?
 
-**Exit criterion:** show a clear HCI benefit from embodiment under low-risk conditions.
+**Exit criterion:** show a clear HCI benefit from embodiment under low-risk conditions that could not be established adequately in simulation.
 
 ## Stage C — Personal-baseline wellbeing study
 
@@ -104,8 +116,10 @@ Across every stage:
 
 ## Near-term practical milestone
 
-The most credible first demonstrator remains deliberately modest:
+The most credible first demonstrator is deliberately modest:
 
-> **A software companion with transparent continuity state, inspectable permissions, personal-baseline summaries, uncertainty-aware proactive behavior, and a simulated model-migration event.**
+> **An avatar-based software companion with transparent continuity state, inspectable permissions, a few routine contexts, synthetic personal-baseline summaries, uncertainty-aware proactive behavior, and a simulated model-migration event.**
+
+A 2D avatar, simple 3D character, Unity scene, Unreal prototype, or AITuber-style front end can all be valid if they answer the experiment with minimal extra complexity.
 
 If that does not create measurable value, adding expensive humanoid hardware would be premature.
