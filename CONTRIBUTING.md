@@ -55,6 +55,16 @@ Please distinguish between:
 
 A compelling idea should not be presented as validated merely because it is plausible.
 
+## Contribution rights and future commercialization
+
+Small corrections, references, issue discussions, and narrowly scoped research critiques are welcome under the repository's current contribution process.
+
+For a **substantial original contribution** — for example, a major authored section, original diagram, reusable dataset, substantial experimental protocol, or source-code implementation — please open an issue and discuss licensing and disclosure scope **before** submitting the work.
+
+Unless a separate agreement is made, contributors retain copyright in their contributions. Acceptance into this repository does not automatically give the repository owner a separate right to relicense a contributor's work commercially under different terms.
+
+If the project later needs contributor material to support dual licensing, commercial licensing, or another relicensing model, an explicit contributor agreement or other permission process should be established first. The project should not silently assume those rights.
+
 ## Security issues
 
 Please do **not** report exploitable security details in a public issue. See [`SECURITY.md`](SECURITY.md).
