@@ -1,149 +1,154 @@
 # Conceptual System Architecture
 
-This document describes a high-level architecture for an embodied AI companion that combines physical interaction, context-aware behavior, and preventive-health support.
+This document consolidates the public architecture for **Embodied Companion Health**. It describes responsibilities and trust boundaries, not a concrete device design.
 
-It intentionally avoids implementation-sensitive details such as exact sensor placement, diagnostic thresholds, proprietary control algorithms, or chemical formulations.
+Implementation-sensitive details such as exact sensor placement, materials, fluid geometry, clinical thresholds, or proprietary control algorithms are intentionally excluded.
 
-## 1. Perception layer
+## High-level architecture
 
-The perception layer gathers contextual signals from the environment, the user's behavior, and permitted close-contact sensing.
+```mermaid
+flowchart TD
+    U[Human User]
 
-Potential input classes include:
+    P[Perception & Context]
+    B[Personal Baseline & Trend]
+    A[Behavioral / Affective State]
+    W[Wellbeing Support]
+    G[Consent, Safety & Policy]
+    O[Conversation & Embodied Output]
+    L[Lifecycle, Security & Maintenance]
 
-- vision and proximity;
-- voice and conversational context;
-- pressure and tactile sensing;
-- temperature and motion;
-- posture and movement patterns;
-- user-entered health context;
-- optional wellness sensors;
-- maintenance and contamination state.
+    U --> P
+    P --> B
+    P --> A
+    B --> W
+    A --> O
+    W --> O
 
-Sensitive modalities should be individually permissioned rather than bundled behind a single consent switch.
+    U --> G
+    G --> P
+    G --> W
+    G --> O
 
-## 2. Personal baseline layer
+    L --> P
+    L --> A
+    L --> O
+    L --> G
 
-A core system capability is learning the user's ordinary range over time.
+    O --> U
+```
 
-Rather than interpreting every signal against a generic population threshold, the system maintains trend summaries such as:
+The important architectural choice is that **no single generative model should directly own perception, memory, health interpretation, consent, and physical action at the same time**.
 
-- typical sleep duration and recovery pattern;
-- usual temperature range;
-- normal activity and posture patterns;
-- recurring dryness or hydration patterns;
-- stable oral and skin observations;
-- normal interaction energy and fatigue patterns.
+## 1. Perception and context
 
-The baseline layer should favor derived summaries over raw data retention wherever possible.
+The system may receive user-permitted signals such as conversation, proximity, touch, motion, temperature, routine context, environmental state, or optional wellness inputs.
 
-## 3. Context and intent layer
+Key requirements:
 
-The system should infer the current interaction context before choosing behavior.
+- modalities are permissioned independently where appropriate;
+- uncertainty is represented rather than hidden;
+- context inference is reversible;
+- sensitive raw data is minimized.
 
-Example contexts:
+## 2. Personal baseline and trend layer
 
-- waking routine;
-- meal preparation;
-- work or concentration;
-- rest and recovery;
-- affectionate interaction;
-- health check requested by the user;
-- maintenance required;
-- potentially unsafe condition.
+This layer asks how current observations compare with the user's own recent normal.
 
-Context detection should remain probabilistic and reversible. A mistaken inference must not lock the system into an inappropriate mode.
+It may maintain derived summaries for areas such as:
 
-## 4. Affective state layer
+- sleep and recovery;
+- activity and mobility;
+- hydration-related patterns;
+- temperature trends;
+- user-reported symptoms;
+- other validated low-risk observations.
 
-The companion maintains a bounded internal interaction state that influences expression and initiative.
+The design should prefer derived trends over indefinite storage of reconstructable raw data.
 
-Candidate dimensions include:
+## 3. Behavioral / affective state
 
-- closeness;
-- comfort;
-- initiative;
-- fatigue;
-- caution;
-- playfulness;
-- caregiving priority;
-- user-distress sensitivity.
+A long-lived companion needs some persistent representation of interaction context so that its behavior does not reset every turn or vary arbitrarily.
 
-These dimensions are system state variables, not claims of subjective feeling.
+The exact representation is an **open research question**. Candidate concepts may include familiarity, comfort, initiative, caution, or interaction energy, but the public project does not assume a fixed psychological model.
 
-## 5. Policy and safety layer
+This layer influences tone, timing, proximity, and initiative. It does not override safety or consent.
 
-Before physical or verbal behavior is executed, it passes through safety and consent policy.
+## 4. Wellbeing support
 
-This layer can enforce:
+The initial wellbeing role is intentionally limited to:
 
-- adult-only boundaries for sexual interaction;
-- explicit and ongoing consent;
-- user stop or pause commands;
-- health-state constraints;
-- hardware force and temperature limits;
-- maintenance locks when hygiene state is uncertain;
-- contextual refusal when the user is asleep, impaired, or otherwise unable to meaningfully consent;
-- clinical-boundary rules that prevent unsupported diagnosis or treatment claims.
+- trend summaries;
+- persistent-deviation detection;
+- routine support;
+- uncertainty-aware suggestions;
+- recommending professional evaluation when appropriate.
 
-Safety policy should be independently testable from the generative behavior model.
+Diagnostic or therapeutic functions belong to a separate validation and regulatory track.
 
-## 6. Behavior generation layer
+## 5. Consent, safety, and policy control plane
 
-The behavior layer maps context, affective state, safety constraints, and user preferences into multimodal output:
+Consent and safety are not post-processing filters. They are a control plane that constrains sensing, memory, interpretation, and action.
 
-- language;
-- voice tone;
-- facial expression;
-- gaze;
-- posture;
-- proximity;
-- touch;
-- reminders and health suggestions;
+Examples include:
+
+- immediate stop or pause;
+- permission boundaries for sensitive sensing;
+- physical force and temperature limits;
+- maintenance lockout;
+- conservative behavior when consent is ambiguous;
+- adult-only boundaries for explicit intimate interaction;
+- clinical-claim boundaries;
+- user-visible explanation of why a behavior was blocked or changed.
+
+Safety-critical rules should be independently testable from the generative behavior model.
+
+## 6. Conversation and embodied output
+
+Outputs may include:
+
+- language and voice;
+- gaze and expression;
+- posture and movement;
+- proximity and touch;
+- wellbeing reminders;
+- refusal, pause, or disengagement;
 - maintenance requests.
 
-The goal is coherent behavior rather than maximum compliance.
+The research problem is coordination. A safe physical companion should not have speech, motion, touch, and refusal generated as unrelated channels.
 
-## 7. Physical interaction layer
+## 7. Lifecycle, cyber-physical security, and maintenance
 
-The physical body may include compliant structures, soft contact surfaces, distributed sensing, thermal control, and replaceable contact components.
+Physical embodiment changes the threat model. A compromised model, plugin, update channel, network service, or actuator controller can become a physical-safety problem.
 
-The architecture should emphasize:
+A mature architecture should therefore consider:
 
-- low-force compliance;
-- fast stop behavior;
-- fault detection;
-- hygienic separation of clean and waste pathways;
-- serviceability;
-- inspectable wear state;
-- graceful fallback when a subsystem becomes unavailable.
+- authenticated and rollback-capable updates;
+- bounded actuator authority;
+- safe offline or degraded modes;
+- separation between generative components and safety-critical control;
+- fault detection and emergency stop;
+- inspectable maintenance state;
+- protection against unauthorized physical control;
+- migration of user-controlled preferences and relationship state across model or hardware changes.
 
-## 8. Health-awareness layer
+Long-term companionship also raises end-of-service questions: what happens if a vendor disappears, a model is retired, or the body is replaced?
 
-The health layer receives derived trends and permitted sensor outputs.
+## Data classes
 
-Its initial role is limited to:
-
-- trend detection;
-- deviation detection;
-- user-facing summaries;
-- reminders;
-- recommendations to seek professional evaluation when appropriate.
-
-Any future diagnostic or therapeutic capability would be treated as a separate regulated subsystem requiring domain-specific validation.
-
-## 9. Data boundary
-
-A trustworthy architecture should distinguish at least four data classes:
+A useful public model distinguishes at least:
 
 1. **Ephemeral interaction data** — used momentarily and discarded.
-2. **Preference data** — user-controlled personalization.
-3. **Derived wellness trends** — retained only when useful.
-4. **Highly sensitive raw health/intimate data** — minimized, protected, and preferably not retained by default.
+2. **Preferences and user-controlled relationship state** — retained for continuity.
+3. **Derived wellbeing trends** — retained only when they provide value.
+4. **Highly sensitive raw health or intimate data** — minimized and preferably not retained by default.
 
-Cloud processing should not be assumed. The safest default for highly intimate information is local-first computation with explicit export when the user chooses it.
+Cloud processing should not be assumed for the most sensitive classes.
 
-## 10. Design principle
+## Architectural invariants
 
-The architecture should preserve one invariant:
+> **Essential health and safety functions must not require unnecessary intimacy.**
 
-> **A companion may become more helpful as it learns more, but it must never require unnecessary intimacy in order to provide essential health or safety functions.**
+> **A generative model must not be the sole authority for safety-critical physical action.**
+
+> **A companion should become more useful as it learns, without becoming harder for the user to inspect, stop, migrate, or leave.**
