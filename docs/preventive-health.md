@@ -1,119 +1,101 @@
-# Preventive Health Support
+# Personal-Baseline Wellbeing Support
 
-Embodied Companion Health treats preventive health as a **longitudinal awareness problem** rather than a promise of automated diagnosis.
+Embodied Companion Health treats preventive support primarily as a **longitudinal change-detection problem**, not as automated diagnosis.
 
-A companion that participates in daily routines may notice changes earlier than a device used only occasionally. The opportunity is to combine low-friction observation with user-specific baselines and timely recommendations for professional care.
+The near-term question is whether a companion that participates in daily routines can notice persistent changes from a user's own baseline and surface them with low friction and appropriate uncertainty.
 
-## Baseline-aware monitoring
+## Near-term scope
 
-Population reference ranges are useful, but daily companion systems can add another dimension: comparison against the user's own ordinary state.
+Public research should begin with lower-risk, broadly understandable signals such as:
 
-Potential trend categories include:
+- sleep and recovery patterns;
+- activity and mobility trends;
+- hydration-related routines or persistent dryness reported by the user;
+- temperature trends from appropriate sensors;
+- fatigue patterns;
+- user-reported symptoms and discomfort;
+- routine adherence chosen by the user.
 
-- sleep duration and recovery;
-- hydration and persistent dryness;
-- temperature and activity;
-- posture and mobility;
-- skin appearance and local changes;
-- oral dryness and visible oral changes;
-- fatigue and stress patterns;
-- persistent discomfort reported by the user.
+These categories are examples, not validated product claims.
 
-The system should prefer trends over isolated readings and explicitly communicate uncertainty.
+## Why personal baseline?
+
+Population reference ranges remain important, but a long-term companion can ask an additional question:
+
+> **Is this meaningfully different from this person's ordinary recent state?**
+
+A useful system therefore needs to reason about:
+
+- normal variation;
+- persistence;
+- sensor uncertainty;
+- temporary context such as travel, exercise, illness, or sleep loss;
+- the cost of false alarms;
+- whether the user already knows about the change.
 
 ## Everyday integration
 
-Health support should fit naturally into daily life.
+Wellbeing support should not turn companionship into a permanent examination.
 
-Example moments include:
+Examples of low-friction integration include:
 
-- waking: summarize sleep and recovery;
-- after meals: offer oral-care reminders;
-- before sleep: notice persistent dryness or fatigue;
-- after exercise: monitor recovery and hydration;
-- during routine affection: notice permitted, non-diagnostic changes that differ from baseline;
-- during conversation: connect repeated symptoms with a suggestion to seek care.
+- waking: summarize sleep or recovery trends;
+- after exercise: suggest hydration or recovery based on user-selected goals;
+- during conversation: connect repeated user-reported symptoms with a reminder;
+- before sleep: surface a persistent routine or fatigue change;
+- on request: show a clear history of the signals and assumptions behind a suggestion.
 
-The point is not to turn affection into an examination. Health-awareness should remain incidental unless the user explicitly requests a check.
+The user should be able to disable a wellbeing feature without disabling unrelated companion functions.
 
-## Oral health
+## Escalation without diagnosis
 
-A future system may be able to help monitor broad non-diagnostic signals such as persistent dryness, visible changes, or repeated discomfort.
+An early system should prefer language such as:
 
-However:
+> "This has been different from your recent baseline for several days. I can't tell you why, but it may be worth paying attention to or discussing with a professional."
 
-- plaque control still requires appropriate oral hygiene;
-- dental calculus cannot simply be "washed away" by a companion;
-- suspected caries or periodontal disease requires professional dental evaluation;
-- any therapeutic or diagnostic oral function would require clinical validation and potentially medical-device regulation.
+It should avoid unsupported statements such as:
 
-The public concept therefore focuses on reminders, trend awareness, and referral rather than automated treatment.
+> "You have condition X."
 
-## Skin and external-body observations
+The threshold for interrupting the user should depend not only on deviation magnitude, but also on persistence, uncertainty, and potential consequence.
 
-Close physical presence may make it possible to notice persistent visible changes that the user overlooks.
+## Future health domains
 
-Potential wellness-oriented signals include:
+Some forms of close physical interaction may eventually make additional health-relevant observations possible. Potential domains include:
 
-- unusual redness;
-- swelling;
-- persistent irritation;
-- changes in temperature distribution;
-- recurring pressure or posture issues;
-- user-reported tenderness.
+- oral health;
+- skin health;
+- sexual and reproductive health;
+- richer physiological sensing;
+- clinically validated screening.
 
-The system should never infer a disease from appearance alone. Its role is to notice persistence, compare against baseline, and recommend appropriate evaluation when warranted.
+These are **future research domains**, not current project capabilities. Each would require dedicated domain expertise, evidence, safety evaluation, privacy controls, and potentially medical-device regulation.
 
-## Sexual and reproductive health boundary
-
-For consenting adults, a companion may eventually support sexual-health awareness, but this area requires particularly strict boundaries.
-
-A safe initial scope is limited to:
-
-- user-controlled history and reminders;
-- noticing persistent external changes when explicitly permitted;
-- encouraging STI testing based on known exposure risk;
-- reminding users that many infections can be asymptomatic;
-- recommending professional evaluation for pain, unusual discharge, lesions, bleeding, or persistent changes.
-
-Sexual activity itself must never be framed as a reliable STI test, diagnostic procedure, or treatment.
-
-## When to escalate
-
-The companion should favor escalation when:
-
-- a concerning change persists;
-- symptoms worsen;
-- the user reports significant pain;
-- fever or systemic illness is suspected;
-- bleeding is unexplained or recurrent;
-- an exposure history suggests professional testing is appropriate;
-- the system's uncertainty is high but the possible consequence is significant.
-
-Escalation should be calm and specific rather than alarming.
-
-Example:
-
-> "This has looked different from your usual baseline for several days. I can't diagnose it, but it would be worth booking a clinician to take a proper look."
+Sexual activity itself must never be represented as a diagnostic procedure, STI test, or treatment.
 
 ## Data minimization
 
-Preventive-health functionality should retain the minimum information necessary for useful trends.
-
-Where possible:
+Where possible, wellbeing functionality should:
 
 - compute locally;
-- store derived trend features rather than raw imagery;
-- expire detailed data automatically;
-- make history review and deletion easy;
-- require explicit consent before exporting data to clinicians or other services.
+- retain derived trends instead of raw media;
+- use explicit retention windows;
+- expose deletion and export controls;
+- separate preference data from health-related observations;
+- require explicit authorization before clinician or third-party sharing.
+
+## Research questions
+
+The useful questions are not "How many conditions can the companion detect?" but:
+
+- Which signals remain stable enough to support a personal baseline?
+- How much history adds value?
+- Can false-positive burden remain acceptable?
+- Does contextual timing make health support more useful or merely more intrusive?
+- Can the system communicate uncertainty clearly enough that users do not mistake it for diagnosis?
 
 ## Product boundary
 
-The first credible product milestone is not an autonomous doctor.
+The first credible milestone is intentionally modest:
 
-It is a companion that can say, reliably and appropriately:
-
-> **"This is different from your normal. It may be worth paying attention to."**
-
-That alone could create meaningful preventive-health value while preserving a clear boundary around professional diagnosis and treatment.
+> **A companion that can reliably say, "This has been different from your normal for a while," and explain why it is mentioning it.**

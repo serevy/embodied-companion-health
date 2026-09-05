@@ -1,105 +1,78 @@
 # Embodied Companion Health
 
-> **Can intimate human–AI interaction become a platform for continuous preventive health?**
+> **Can a long-term embodied AI companion support wellbeing by noticing meaningful changes from a person's own baseline?**
 
-**Embodied Companion Health** is a public concept and research repository exploring how a physically embodied AI companion could combine everyday companionship, consensual adult intimacy, wellbeing support, and long-term health awareness.
+**Embodied Companion Health** is a public concept and research repository about physically embodied AI companions that participate in everyday life over long periods of time.
 
-The core idea is simple: many useful health signals appear during ordinary life — sleep, hydration, oral condition, skin condition, stress, fatigue, body temperature, movement, and close physical interaction. A future embodied AI companion could observe changes against an individual's normal baseline, support healthy routines, and encourage appropriate professional care without turning daily life into a clinical workflow.
+The core hypothesis is deliberately narrow:
 
-This repository focuses on the **public research layer**: vision, system boundaries, safety, privacy, consent, affective interaction, hygiene, and a staged research roadmap. Implementation-sensitive details that may require dedicated safety review, clinical validation, or intellectual-property assessment are intentionally out of scope.
+> A companion that is continuously present may be able to support wellbeing with less friction by learning a user's ordinary patterns and surfacing meaningful deviations — without pretending to be a doctor.
 
-**日本語での概要:** [`docs/overview-ja.md`](docs/overview-ja.md)
+Embodiment matters because daily life contains context that occasional measurements miss: sleep, activity, recovery, hydration-related patterns, routine, posture, conversation, touch, proximity, and other user-permitted signals.
 
-## Goals
+Companionship matters because a useful system must do more than collect data. It must behave coherently, respect boundaries, remain safe when models or hardware fail, and preserve user trust over years rather than sessions.
 
-- Explore **embodied AI companionship** as more than conversation alone.
-- Study how **affection, touch, routine, and wellbeing support** can coexist in one system.
-- Design for **continuous baseline-aware health monitoring** rather than one-off measurements.
-- Keep the companion experience human-centered: helpful, warm, autonomous, and non-clinical in everyday use.
-- Treat **privacy, consent, hygiene, safety, and user agency** as first-class system requirements.
-- Separate wellness-oriented screening and trend detection from medical diagnosis or treatment.
+## What this project focuses on
 
-## Concept pillars
+### 1. Long-term embodied companionship
 
-### 1. Embodied interaction
+How can an AI companion remain useful, understandable, and behaviorally coherent across days, model updates, hardware changes, and changing user preferences?
 
-A useful physical companion needs more than a humanoid shell. The research space includes compliant materials, tactile sensing, temperature, pressure, motion, proximity, safe fluid handling, and context-aware physical behavior.
+### 2. Personal-baseline wellbeing support
 
-### 2. Affective state architecture
+Can low-friction longitudinal observation identify useful changes from a person's own recent normal while communicating uncertainty and avoiding unsupported medical claims?
 
-The companion should not behave like a deterministic appliance. Its behavior can be shaped by multiple internal state dimensions such as closeness, comfort, fatigue, initiative, caution, and the user's current condition. The goal is not to claim human consciousness, but to create coherent, context-sensitive interaction.
+### 3. Trust, consent, safety, and privacy
 
-### 3. Preventive health support
+A physical companion may perceive highly sensitive parts of daily life and can also affect the physical world. Consent, data minimization, cyber-physical security, safe refusal, and user control therefore belong in the architecture rather than in a policy appendix.
 
-The system may track changes from a user's own baseline and surface non-diagnostic signals: persistent oral changes, unusual skin changes, sleep or fatigue trends, hydration issues, mobility changes, or other deviations that may justify closer attention or professional care.
+### 4. Embodied HCI and maintainability
 
-### 4. Intimacy-aware design
+Comfortable physical interaction requires compliant behavior, predictable safety limits, inspectable maintenance state, hygienic contact interfaces, and graceful failure.
 
-Consensual adult intimacy is treated as one possible interaction domain, not the sole purpose of the system. The same architecture must remain useful in non-sexual contexts such as hugs, sleep support, daily routines, caregiving, recovery, and emotional companionship.
+## Intimacy is a research context, not the whole product
 
-### 5. Hygiene and maintainability
+Close physical interaction can be affectionate, comforting, romantic, caregiving, practical, or — for consenting adults — sexual.
 
-Any system involving close contact must be designed for cleaning, replaceable contact surfaces, separation of clean and waste fluid paths, contamination monitoring, maintenance reminders, and graceful degradation.
+This project treats adult intimacy as one possible HCI domain, not as a requirement for health support and not as the sole purpose of the system. Essential wellbeing and safety functions must remain available without intimate interaction.
 
-### 6. Privacy and consent
+## What is intentionally future-facing
 
-Sensitive data should default to local processing, minimal retention, explicit permissions, and narrow-purpose use. Health or intimate data must never become a hidden byproduct of companionship.
-
-## Concept architecture
-
-The public architecture separates perception, personal baselines, affective state, health-support logic, safety/consent/privacy controls, and embodied output rather than treating the system as one opaque end-to-end model.
-
-See [`docs/concept-architecture.md`](docs/concept-architecture.md) for the Mermaid architecture diagram and module boundaries.
-
-## Research questions
-
-The project is organized around explicit open questions rather than assumed solutions, including:
-
-- behavioral continuity and affective-state design;
-- baseline-aware health support without premature diagnostic claims;
-- consent in adaptive physical AI;
-- meaningful companion autonomy;
-- hygiene and maintainability of close-contact systems;
-- privacy for intimate and longitudinal health data;
-- multimodal synchronization;
-- responsible evaluation of intimacy-aware HCI;
-- the boundary between wellness support and regulated clinical functionality.
-
-See [`docs/research-questions.md`](docs/research-questions.md).
+Potential future domains include oral health, skin health, sexual health, richer close-contact sensing, and clinically validated screening. These are **not current capabilities** and would require domain experts, evidence, safety review, and potentially medical-device regulation before any diagnostic or therapeutic claims could be made.
 
 ## Repository map
 
-- [`docs/overview-ja.md`](docs/overview-ja.md) — Japanese public overview / 日本語概要
-- [`docs/vision.md`](docs/vision.md) — product and research vision
-- [`docs/concept-architecture.md`](docs/concept-architecture.md) — high-level architecture diagram and public system boundaries
-- [`docs/system-architecture.md`](docs/system-architecture.md) — conceptual system architecture
-- [`docs/affective-state-model.md`](docs/affective-state-model.md) — state-driven behavior and autonomy
-- [`docs/preventive-health.md`](docs/preventive-health.md) — baseline-aware health support
-- [`docs/hygiene-and-fluid-management.md`](docs/hygiene-and-fluid-management.md) — hygiene and fluid-system principles
-- [`docs/privacy-consent-ethics.md`](docs/privacy-consent-ethics.md) — privacy, consent, and ethical boundaries
-- [`docs/research-questions.md`](docs/research-questions.md) — open research questions and evaluation themes
-- [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from concept to validated prototypes
+- [`docs/overview-ja.md`](docs/overview-ja.md) — 日本語概要
+- [`docs/vision.md`](docs/vision.md) — research vision and scope
+- [`docs/system-architecture.md`](docs/system-architecture.md) — consolidated conceptual architecture
+- [`docs/affective-state-model.md`](docs/affective-state-model.md) — behavioral continuity as an open research problem
+- [`docs/preventive-health.md`](docs/preventive-health.md) — personal-baseline wellbeing support
+- [`docs/hygiene-contact-interfaces.md`](docs/hygiene-contact-interfaces.md) — high-level hygiene and contact-interface requirements
+- [`docs/privacy-consent-ethics.md`](docs/privacy-consent-ethics.md) — privacy, consent, cyber-physical security, and lifecycle trust
+- [`docs/research-questions.md`](docs/research-questions.md) — five focused public research questions
+- [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from software validation to advanced research
+- [`docs/simulation-prototype.md`](docs/simulation-prototype.md) — minimal Unity/Unreal/AITuber-style simulation plan before robotics
+
+## Public / private boundary
+
+This repository publishes the **research framing layer**: vision, responsibilities, research questions, system boundaries, safety principles, evaluation ideas, and low-risk simulation plans.
+
+It intentionally avoids implementation-sensitive details such as exact sensor placement, material stacks, fluid-channel geometry, chemical formulations, proprietary detection logic, or clinically actionable thresholds. Those may require dedicated safety, IP, or regulatory review before publication.
 
 ## What this project is not
 
-This repository does **not** claim to provide a medical device, diagnosis, treatment, STI testing, dental diagnosis, fertility assessment, or any other clinical function. Any future clinical capability would require appropriate domain expertise, validation, regulation, and safety controls.
+This repository does **not** provide a medical device, diagnosis, treatment, STI test, dental diagnosis, fertility assessment, or autonomous healthcare system.
 
-It is also not a blueprint for unconstrained automation of intimate behavior. Adult consent, user agency, system refusal, safety limits, and contextual appropriateness are core requirements.
+It also does not assume that a useful companion must imitate a human perfectly or claim human-like consciousness. The research target is trustworthy behavior and useful long-term interaction.
 
-## Research stance
+## Current status
 
-A compelling embodied companion should not merely imitate a human body. It should selectively reproduce the qualities that make close interaction comfortable and meaningful, while improving on areas where machines can offer unique value: consistent hygiene, longitudinal sensing, routine support, personalization, accessibility, and early detection of meaningful changes.
+**Concept / research-framing stage.**
 
-The long-term research question is therefore not:
+The near-term goal is not a full humanoid platform. It is to test the core hypotheses with a small avatar-based simulator — potentially using Unity, Unreal Engine, or an AITuber/virtual-avatar stack — before adding custom physical hardware.
 
-> "How accurately can a robot copy a person?"
+## Long-term question
 
-but rather:
-
-> **"What should a trustworthy embodied companion become that a human partner cannot or should not be expected to be?"**
-
-## Status
-
-Early concept stage. Public discussion and architecture only.
+> **What should a trustworthy embodied companion do uniquely well — rather than merely copying a human partner?**
 
 No license is granted at this stage; all rights are reserved unless explicitly stated otherwise.
