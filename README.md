@@ -4,6 +4,10 @@
 
 **Embodied Companion Health** is a public concept and research repository about physically embodied AI companions that participate in everyday life over long periods of time.
 
+**Readable documentation site:** https://serevy.github.io/embodied-companion-health/
+
+The GitHub repository remains the source of truth for version history, issues, pull requests, releases, licensing, and research discussion.
+
 The core hypothesis is deliberately narrow:
 
 > A companion that is continuously present may be able to support wellbeing with less friction by learning a user's ordinary patterns and surfacing meaningful deviations — without pretending to be a doctor.
@@ -81,7 +85,7 @@ It also does not assume that a useful companion must imitate a human perfectly o
 
 ## Current status
 
-**Public v0.1 concept candidate.**
+**Public v0.1 concept released as `v0.1-concept`.**
 
 The near-term goal is not a full humanoid platform. It is to test the core hypotheses with a small avatar-based simulator — potentially using Unity, Unreal Engine, or an AITuber/virtual-avatar stack — before adding custom physical hardware.
 
