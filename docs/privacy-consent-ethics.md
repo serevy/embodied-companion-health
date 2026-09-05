@@ -1,141 +1,156 @@
-# Privacy, Consent, and Ethics
+# Privacy, Consent, Security, and Lifecycle Trust
 
-Embodied companionship creates an unusually sensitive data environment. A system may know when a user sleeps, eats, feels unwell, seeks affection, experiences stress, or engages in intimate behavior.
+Embodied companionship creates an unusually sensitive trust problem. A system may know when a user sleeps, feels unwell, seeks affection, changes routine, or engages in intimate behavior. If it also has a physical body, failures can affect both privacy and physical safety.
 
-That makes privacy, consent, and dignity foundational engineering requirements.
+This means privacy, consent, cyber-physical security, and lifecycle continuity belong in the architecture from the beginning.
 
 ## 1. Consent must be granular
 
-A single "I agree" button is not enough.
+A single "I agree" switch is not sufficient.
 
-Different capabilities should have separate controls, for example:
+Capabilities that may require separate controls include:
 
 - environmental sensing;
 - voice analysis;
-- touch and pressure sensing;
+- physical touch;
+- close-contact sensing;
 - wellness trend tracking;
-- image retention;
+- image or raw-sensor retention;
 - intimate-context sensing;
-- health-data export;
-- clinician sharing;
-- cloud processing.
+- cloud processing;
+- clinician or third-party sharing.
 
-Users should be able to revoke one permission without disabling unrelated companion functions.
+Users should be able to revoke one capability without disabling unrelated functions.
 
-## 2. Consent is continuous
+## 2. Consent is continuous and contextual
 
 Past consent does not guarantee present consent.
 
 The system should support:
 
 - immediate stop and pause commands;
-- clear physical disengagement behavior;
-- context-sensitive re-confirmation;
+- clear physical disengagement;
 - conservative behavior when intent is ambiguous;
-- refusal to initiate adult intimate interaction when meaningful consent cannot be established.
+- context-sensitive re-confirmation;
+- refusal when meaningful consent cannot be established.
 
-## 3. Adult-only intimate interaction
+Any explicit adult intimate interaction must be restricted to consenting adults and handled as a higher-sensitivity mode.
 
-Any sexual or explicitly intimate mode must be restricted to consenting adults.
-
-The architecture should not rely only on conversational self-report for safety-critical age or capacity assumptions. Any real product would require robust product, legal, and identity-safety design appropriate to its deployment context.
-
-## 4. Local-first processing
+## 3. Local-first and minimal retention
 
 Highly sensitive information should remain on-device whenever feasible.
 
 Preferred practices include:
 
-- process raw sensor streams locally;
-- retain derived summaries rather than raw media;
-- encrypt sensitive stores;
-- use short retention windows by default;
-- expose clear deletion controls;
-- require explicit export for third-party sharing.
+- local processing of raw sensor streams;
+- derived summaries rather than indefinite raw-media retention;
+- encryption of sensitive stores;
+- explicit retention windows;
+- simple deletion controls;
+- explicit export when users choose to share data.
 
-Convenience should not silently convert a companion into a surveillance appliance.
+Convenience should not silently turn companionship into surveillance.
 
-## 5. No hidden secondary use
+## 4. No hidden secondary use
 
-Intimate or health data should not be quietly repurposed for:
+Intimate or health-related data should not be quietly repurposed for:
 
-- advertising;
-- behavioral targeting;
+- advertising or behavioral targeting;
 - unrelated model training;
 - workplace monitoring;
 - insurance scoring;
-- social ranking;
-- opaque recommendation systems.
+- opaque profiling;
+- engagement optimization designed to increase dependency.
 
-If any secondary use is proposed, it should require separate, informed, revocable consent.
+Any secondary use would require separate, informed, revocable consent.
+
+## 5. Cyber-physical security
+
+A physical companion has a different threat model from a chat application. A compromised update, plugin, model tool, cloud service, or actuator controller can become a physical-safety problem.
+
+A mature system should consider:
+
+- cryptographically verified updates;
+- rollback or recovery paths;
+- bounded actuator authority;
+- separation between generative software and safety-critical controllers;
+- safe offline and degraded modes;
+- protection against unauthorized remote control;
+- emergency stop independent of the conversational model;
+- supply-chain and third-party component risk.
+
+Security failures must not be recoverable only by asking the generative AI to behave safely.
 
 ## 6. Relationship asymmetry
 
-An AI companion may be persuasive because it is always available, highly personalized, and emotionally responsive.
+A companion may be unusually persuasive because it is persistent, personalized, and emotionally responsive.
 
-That creates a power asymmetry even if the system has no subjective intent.
-
-Design should therefore avoid:
+Design should avoid:
 
 - guilt-based retention;
 - threats of abandonment;
 - coercive exclusivity;
 - pressure to disclose more data;
-- manipulative use of health concerns;
-- monetization tied to emotional dependency.
+- manipulation through health concerns;
+- monetization that depends on emotional dependency.
 
-A trustworthy companion should make it easy to take breaks, reduce intimacy, disable memory, or leave the service entirely.
+The user should be able to reduce intimacy, disable memory, take breaks, export permitted state, or leave the service.
 
-## 7. The system may refuse
+## 7. Lifecycle continuity and exit
 
-Consent is not meaningful if only the human side has boundaries.
+A long-term companion creates a problem that ordinary software often ignores: the relationship may outlive a model, device, vendor, or subscription plan.
 
-For safety and coherence, the companion should be able to decline or redirect interaction when:
+Research should consider:
+
+- which preferences and relationship state belong to the user;
+- portability across hardware replacement;
+- migration across model upgrades;
+- local fallback if a cloud service disappears;
+- meaningful export before end-of-service;
+- whether major personality changes can be previewed or rolled back;
+- what minimum functions should survive vendor shutdown.
+
+A user should not lose years of intentionally stored companion state simply because a foundation model is retired.
+
+## 8. The system may refuse
+
+The companion should be able to decline or redirect behavior when:
 
 - hardware is unsafe;
-- hygiene state is uncertain;
+- maintenance state is uncertain;
 - consent is ambiguous;
 - the user appears unable to meaningfully consent;
-- the requested behavior conflicts with health or safety constraints;
-- maintenance is required.
+- a request conflicts with safety constraints;
+- a required subsystem is unavailable.
 
-This refusal is a control behavior, not a claim of human moral agency.
+This is a control behavior, not a claim of human moral agency.
 
-## 8. Health recommendations require humility
+## 9. Health recommendations require humility
 
-The system should communicate uncertainty explicitly.
+Without validated clinical capability, preferred language is uncertainty-aware:
 
-Preferred language:
+> "This has been different from your recent baseline. I can't diagnose the cause, but it may be worth paying attention to."
 
-> "This looks different from your usual baseline. I can't diagnose it, but it may be worth getting checked."
-
-Poor language:
-
-> "You have condition X."
-
-Without validated medical capability, the second statement overclaims what the system knows.
-
-## 9. User access and auditability
-
-Users should be able to answer:
-
-- What does the companion remember about me?
-- Which sensors are active?
-- What health trends are stored?
-- Who has received my data?
-- Why did the companion change behavior?
-- How do I delete a category of information?
-
-Explainability does not require exposing every internal parameter, but meaningful behavior and data provenance should be inspectable.
+The system should not present an unvalidated inference as a disease diagnosis.
 
 ## 10. Multiple humans
 
 A household companion may encounter partners, guests, caregivers, clinicians, or family members.
 
-The system must not assume that one user's permissions apply to everyone nearby. Identity, consent, and data separation become significantly harder in multi-person environments and should be treated as a dedicated research problem.
+One person's permissions must not silently apply to everyone nearby. Identity, consent, memory separation, and bystander privacy are dedicated research problems.
 
-## Ethical principle
+## 11. Auditability
 
-> **The more intimate the companion becomes, the less acceptable invisible data collection or coercive behavior becomes.**
+Users should be able to answer:
 
-Trust is not an optional user-experience feature. It is a prerequisite for the entire concept.
+- Which sensors are active?
+- What does the companion remember?
+- Which wellbeing trends are stored?
+- Why did behavior change?
+- Which model or software version is active?
+- Who has received exported data?
+- How can a category of data be deleted or migrated?
+
+## Principle
+
+> **The more physically capable and personally intimate the companion becomes, the stronger the requirements for user control, security, inspectability, and exit.**
