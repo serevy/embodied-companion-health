@@ -1,0 +1,43 @@
+site_name: Embodied Companion Health
+site_description: Public research framing for long-term embodied AI companionship, continuity, wellbeing support, consent, privacy, and safety.
+site_url: https://serevy.github.io/embodied-companion-health/
+repo_url: https://github.com/serevy/embodied-companion-health
+repo_name: serevy/embodied-companion-health
+edit_uri: edit/main/docs/
+
+copyright: Documentation licensed under CC BY-NC 4.0 unless otherwise stated.
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - 日本語概要: overview-ja.md
+  - Vision: vision.md
+  - Research:
+      - Research Questions: research-questions.md
+      - Research Roadmap: research-roadmap.md
+      - Simulation Prototype: simulation-prototype.md
+      - Evaluation Protocol: evaluation-protocol.md
+  - Architecture & Interaction:
+      - System Architecture: system-architecture.md
+      - Behavioral Continuity: affective-state-model.md
+      - Personal-Baseline Wellbeing: preventive-health.md
+      - Hygiene & Contact Interfaces: hygiene-contact-interfaces.md
+  - Trust & Governance:
+      - Privacy, Consent & Ethics: privacy-consent-ethics.md
+      - Public / Private Boundary: public-private-boundary.md
