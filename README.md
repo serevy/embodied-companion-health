@@ -8,6 +8,8 @@ The core idea is simple: many useful health signals appear during ordinary life 
 
 This repository focuses on the **public research layer**: vision, system boundaries, safety, privacy, consent, affective interaction, hygiene, and a staged research roadmap. Implementation-sensitive details that may require dedicated safety review, clinical validation, or intellectual-property assessment are intentionally out of scope.
 
+**日本語での概要:** [`docs/overview-ja.md`](docs/overview-ja.md)
+
 ## Goals
 
 - Explore **embodied AI companionship** as more than conversation alone.
@@ -43,14 +45,39 @@ Any system involving close contact must be designed for cleaning, replaceable co
 
 Sensitive data should default to local processing, minimal retention, explicit permissions, and narrow-purpose use. Health or intimate data must never become a hidden byproduct of companionship.
 
+## Concept architecture
+
+The public architecture separates perception, personal baselines, affective state, health-support logic, safety/consent/privacy controls, and embodied output rather than treating the system as one opaque end-to-end model.
+
+See [`docs/concept-architecture.md`](docs/concept-architecture.md) for the Mermaid architecture diagram and module boundaries.
+
+## Research questions
+
+The project is organized around explicit open questions rather than assumed solutions, including:
+
+- behavioral continuity and affective-state design;
+- baseline-aware health support without premature diagnostic claims;
+- consent in adaptive physical AI;
+- meaningful companion autonomy;
+- hygiene and maintainability of close-contact systems;
+- privacy for intimate and longitudinal health data;
+- multimodal synchronization;
+- responsible evaluation of intimacy-aware HCI;
+- the boundary between wellness support and regulated clinical functionality.
+
+See [`docs/research-questions.md`](docs/research-questions.md).
+
 ## Repository map
 
+- [`docs/overview-ja.md`](docs/overview-ja.md) — Japanese public overview / 日本語概要
 - [`docs/vision.md`](docs/vision.md) — product and research vision
+- [`docs/concept-architecture.md`](docs/concept-architecture.md) — high-level architecture diagram and public system boundaries
 - [`docs/system-architecture.md`](docs/system-architecture.md) — conceptual system architecture
 - [`docs/affective-state-model.md`](docs/affective-state-model.md) — state-driven behavior and autonomy
 - [`docs/preventive-health.md`](docs/preventive-health.md) — baseline-aware health support
 - [`docs/hygiene-and-fluid-management.md`](docs/hygiene-and-fluid-management.md) — hygiene and fluid-system principles
 - [`docs/privacy-consent-ethics.md`](docs/privacy-consent-ethics.md) — privacy, consent, and ethical boundaries
+- [`docs/research-questions.md`](docs/research-questions.md) — open research questions and evaluation themes
 - [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from concept to validated prototypes
 
 ## What this project is not
