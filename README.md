@@ -53,7 +53,7 @@ Potential future domains include oral health, skin health, sexual health, richer
 - [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from software validation to advanced research
 - [`docs/simulation-prototype.md`](docs/simulation-prototype.md) — minimal Unity/Unreal/AITuber-style simulation plan before robotics
 - [`docs/evaluation-protocol.md`](docs/evaluation-protocol.md) — Stage A constructs, endpoints, scoring, rater protocol, and study progression
-- [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — disclosure boundary for public research vs private implementation/IP work
+- [`docs/public-private-boundary.md`](docs/public-private-boundary.md) — disclosure boundary for public research vs private implementation work
 
 ## Public / private boundary
 
@@ -61,9 +61,17 @@ This repository publishes the **research framing layer**: vision, responsibiliti
 
 It intentionally avoids implementation-sensitive details such as exact sensor placement, material stacks, fluid-channel geometry, chemical formulations, proprietary detection logic, or clinically actionable thresholds. Those may require dedicated safety, IP, or regulatory review before publication.
 
-See [`docs/public-private-boundary.md`](docs/public-private-boundary.md) for the working disclosure rule:
+See [`docs/public-private-boundary.md`](docs/public-private-boundary.md) before proposing implementation-sensitive material for public disclosure.
 
-> **Public: what, why, and how to evaluate. Private: exactly how to build, protect, and commercialize.**
+## Contributions and security
+
+Research critique, references, falsification attempts, and simpler alternatives are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+Please do not publish exploitable vulnerability details in a public issue. See [`SECURITY.md`](SECURITY.md).
+
+## Citation and provenance
+
+If this project influences later research, design, or implementation, citation or a link back is appreciated. See [`CITATION.md`](CITATION.md) for the preferred public-v0.1 citation guidance.
 
 ## What this project is not
 
@@ -73,22 +81,16 @@ It also does not assume that a useful companion must imitate a human perfectly o
 
 ## Current status
 
-**Concept / research-framing stage — public v0.1 candidate.**
+**Public v0.1 concept candidate.**
 
 The near-term goal is not a full humanoid platform. It is to test the core hypotheses with a small avatar-based simulator — potentially using Unity, Unreal Engine, or an AITuber/virtual-avatar stack — before adding custom physical hardware.
-
-## Contributing and security
-
-Research critique, related work, falsification attempts, simpler alternatives, and safety feedback are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-Please do not disclose exploitable security details in public issues. See [`SECURITY.md`](SECURITY.md).
-
-## License
-
-Unless otherwise stated, the documentation, diagrams, research framing, and other non-code content in this repository are licensed under **CC BY-NC 4.0**. See [`LICENSE.md`](LICENSE.md).
-
-Future executable source code, if published, will use a separately stated software license rather than inheriting this documentation license automatically.
 
 ## Long-term question
 
 > **What should a trustworthy embodied companion do uniquely well — rather than merely copying a human partner?**
+
+## License
+
+Unless otherwise stated, documentation, diagrams, research framing, and other non-code content are licensed under **CC BY-NC 4.0**. See [`LICENSE.md`](LICENSE.md).
+
+Future source code, if published, will use a separately stated software license rather than inheriting the documentation license by default.
