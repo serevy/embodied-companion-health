@@ -51,10 +51,11 @@ Potential future domains include oral health, skin health, sexual health, richer
 - [`docs/privacy-consent-ethics.md`](docs/privacy-consent-ethics.md) — privacy, consent, cyber-physical security, and lifecycle trust
 - [`docs/research-questions.md`](docs/research-questions.md) — five focused public research questions
 - [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from software validation to advanced research
+- [`docs/simulation-prototype.md`](docs/simulation-prototype.md) — minimal Unity/Unreal/AITuber-style simulation plan before robotics
 
 ## Public / private boundary
 
-This repository publishes the **research framing layer**: vision, responsibilities, research questions, system boundaries, safety principles, and evaluation ideas.
+This repository publishes the **research framing layer**: vision, responsibilities, research questions, system boundaries, safety principles, evaluation ideas, and low-risk simulation plans.
 
 It intentionally avoids implementation-sensitive details such as exact sensor placement, material stacks, fluid-channel geometry, chemical formulations, proprietary detection logic, or clinically actionable thresholds. Those may require dedicated safety, IP, or regulatory review before publication.
 
@@ -68,7 +69,7 @@ It also does not assume that a useful companion must imitate a human perfectly o
 
 **Concept / research-framing stage.**
 
-The near-term goal is not a full humanoid platform. It is to determine whether the core hypotheses are testable with smaller software and low-risk embodied prototypes.
+The near-term goal is not a full humanoid platform. It is to test the core hypotheses with a small avatar-based simulator — potentially using Unity, Unreal Engine, or an AITuber/virtual-avatar stack — before adding custom physical hardware.
 
 ## Long-term question
 
