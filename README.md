@@ -52,6 +52,7 @@ Potential future domains include oral health, skin health, sexual health, richer
 - [`docs/research-questions.md`](docs/research-questions.md) — five focused public research questions
 - [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from software validation to advanced research
 - [`docs/simulation-prototype.md`](docs/simulation-prototype.md) — minimal Unity/Unreal/AITuber-style simulation plan before robotics
+- [`docs/evaluation-protocol.md`](docs/evaluation-protocol.md) — Stage A constructs, endpoints, scoring, rater protocol, and study progression
 
 ## Public / private boundary
 
