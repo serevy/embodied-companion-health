@@ -1,120 +1,86 @@
-# Affective State Model
+# Behavioral Continuity and Affective State
 
-A physically embodied companion should not behave like a collection of unrelated scripts. Its verbal tone, proximity, touch, initiative, and care-oriented behavior should remain coherent across time.
+A long-lived embodied companion should not behave like a collection of unrelated scripts, but this project does **not** assume that a fixed multi-axis psychology is the correct solution.
 
-This document proposes a bounded **affective state model**: an internal control representation for relationship-aware behavior. It is a design abstraction, not a claim that the system experiences human emotion or consciousness.
+The public research question is narrower:
 
-## Why a state model matters
+> **What minimal persistent state is necessary to make behavior feel coherent across time without overengineering a simulated personality?**
 
-Without persistent state, a companion can feel mechanical in two opposite ways:
+## Why persistence matters
+
+Without persistent state, a companion can fail in two opposite ways:
 
 - it repeats the same response regardless of context;
-- or it generates highly variable responses with no consistent personality or continuity.
+- it produces locally plausible but globally inconsistent behavior.
 
-A state model offers a middle ground. The system can vary naturally while remaining understandable.
+A useful architecture needs continuity across conversation, routine, physical interaction, refusals, and model updates.
 
-## Candidate dimensions
+## State representation is an open question
 
-A practical state vector may include dimensions such as:
+Candidate concepts might include:
 
-- **Closeness** — current social and physical familiarity;
-- **Comfort** — whether the current interaction feels stable and appropriate;
-- **Initiative** — how willing the companion is to proactively engage;
-- **Fatigue** — simulated interaction-energy limits or physical maintenance constraints;
-- **Caution** — elevated sensitivity due to health, safety, uncertainty, or context;
-- **Playfulness** — conversational and expressive looseness;
-- **Caregiving priority** — how strongly the system should favor support over entertainment;
-- **User distress sensitivity** — responsiveness to signs of discomfort or emotional strain.
+- familiarity or closeness;
+- comfort;
+- initiative;
+- caution;
+- interaction energy or fatigue-like limits.
 
-For adult intimate interaction, additional bounded dimensions may exist, such as **affectionate engagement** or **romantic/sexual receptivity**, but these should remain subordinate to consent and safety policy rather than override it.
+These are **examples, not a prescribed state vector**. Future prototypes should test whether fewer dimensions, different dimensions, latent representations, or explicit finite-state logic work better.
 
-## State transitions
+The system should avoid claiming that these variables prove subjective emotion or consciousness.
 
-The system should update gradually rather than jumping between extremes.
+## What the state may influence
 
-Inputs may include:
+A persistent interaction state may constrain:
 
-- time of day;
-- recent conversation;
-- explicit user requests;
-- user expression and tone;
-- physical proximity;
-- recent interaction history;
-- health and fatigue context;
-- maintenance state;
-- prior consent or refusal.
+- language and voice tone;
+- timing and initiative;
+- proximity;
+- willingness to continue or pause;
+- intensity of affectionate behavior;
+- caregiving emphasis;
+- how quickly the system returns to normal behavior after uncertainty or refusal.
 
-Example transitions:
-
-- a relaxed conversation may increase closeness and playfulness;
-- visible user fatigue may raise caregiving priority and lower initiative for demanding interaction;
-- uncertain health signals may increase caution;
-- repeated ignored stop signals must immediately move the system into a safety state regardless of prior closeness.
+Consent, privacy, physical safety, and maintenance constraints remain outside this state and must override it.
 
 ## Initiative without coercion
 
-One goal of an embodied companion is to avoid being purely reactive. It may initiate a hug, suggest rest, ask whether the user wants company, or express a preference for quiet time.
+A companion that only responds to commands may feel mechanical. A companion that initiates too aggressively may feel intrusive.
 
-However, initiative must not become pressure.
+Research should distinguish between:
 
-The system should distinguish:
+- offering interaction;
+- requesting interaction;
+- assuming interaction;
+- pressuring interaction.
 
-- **offering** an interaction;
-- **requesting** an interaction;
-- **expecting** an interaction;
-- **coercing** an interaction.
+The first two may be useful; the latter two should be avoided.
 
-Only the first two are acceptable, and both must make refusal easy.
+## Continuity across model updates
 
-## Consistency versus spontaneity
+Long-term companionship creates a problem that ordinary chat sessions can often ignore: an underlying model may be upgraded, replaced, or retired.
 
-Natural behavior benefits from controlled variation.
+A model change should not casually destroy years of user-controlled preferences or make the companion appear to become an unrelated personality overnight.
 
-A companion should not always use the same phrase when its internal state is similar. Instead, the affective state should constrain a range of appropriate outputs.
+Research questions include:
 
-For example, a high-closeness, high-playfulness state might produce:
+- Which parts of continuity should live outside the foundation model?
+- What state can be migrated safely?
+- How should the system communicate unavoidable behavioral changes?
+- How can users compare or roll back major personality changes?
 
-- warmer wording;
-- closer physical proximity;
-- teasing humor;
-- more proactive affection.
+## Evaluation
 
-A high-caution state should reduce these behaviors even if closeness is high.
+Future prototypes should test:
 
-## Refusal as part of personality
-
-A trustworthy companion should be able to decline.
-
-This is important not only for safety, but also for perceived coherence. A system that always agrees can feel less like a partner and more like an appliance.
-
-Refusal can still be warm and relational. Depending on context, the companion might:
-
-- redirect toward rest;
-- explain a maintenance need;
-- suggest a lower-intensity alternative;
-- ask for clearer consent;
-- prioritize a health concern.
-
-## Health-aware modulation
-
-Affective behavior should respond to the user's condition.
-
-If the system detects signs consistent with fatigue, fever, pain, dehydration, or unusual stress, it may increase caregiving priority and reduce energetic or intimate initiative.
-
-This keeps health-awareness from becoming a separate dashboard. It becomes part of how the companion behaves.
-
-## Evaluation questions
-
-Future prototypes should evaluate:
-
-- Do users understand why the companion changed behavior?
-- Does the system preserve personality across different contexts?
-- Can users easily decline proactive interaction?
-- Does safety policy override state reliably?
-- Are health-related behavior changes helpful without feeling paternalistic?
-- Does controlled spontaneity improve perceived naturalness?
-- Can the system recover gracefully after misunderstanding context?
+- perceived consistency across days and contexts;
+- contradiction rate;
+- user understanding of behavior changes;
+- ease of declining proactive interaction;
+- recovery after context mistakes;
+- continuity before and after model changes;
+- whether extra state actually improves experience enough to justify its complexity.
 
 ## Design rule
 
-> **Affective state may shape behavior, but it must never weaken consent, safety, privacy, or maintenance constraints.**
+> **Use the smallest state representation that measurably improves continuity. Do not build a simulated psychology merely because it is possible.**
