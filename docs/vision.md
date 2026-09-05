@@ -2,65 +2,68 @@
 
 ## Why embodied companionship?
 
-Today, most AI companions exist as text, voice, or avatars. That is useful, but many parts of human wellbeing are physical and contextual: sleep, hydration, movement, touch, proximity, temperature, daily routines, recovery, and the subtle changes noticed by someone who is consistently present.
+Most AI companions today exist as text, voice, or avatars. A physical companion changes the research problem because daily wellbeing is partly physical and contextual: sleep, movement, recovery, hydration-related patterns, routine, proximity, touch, and subtle changes that become meaningful only over time.
 
-Embodied Companion Health explores a future in which an AI companion can participate in daily life through a safe physical body while supporting affection, companionship, routine, and preventive health awareness.
+Embodied Companion Health explores whether a long-term AI companion can make wellbeing support more useful and less intrusive by learning the user's ordinary patterns and noticing persistent deviations.
 
-The goal is not to replace human relationships, clinicians, caregivers, or family. The goal is to explore what a trustworthy embodied system could uniquely contribute when it is continuously present and able to notice longitudinal change.
+The goal is **not** to replace clinicians, caregivers, family, or human relationships. The goal is to identify capabilities that a continuously present embodied system may uniquely provide.
 
 ## Core hypothesis
 
-A companion that already participates in ordinary routines can collect higher-context, lower-friction health signals than a standalone device that only measures during a dedicated test.
+A companion that already participates in ordinary routines may be able to support wellbeing with less friction than a standalone device used only during dedicated measurements.
 
-Examples include:
+The most important proposed advantage is **personal-baseline awareness**:
 
-- changes in sleep and recovery;
-- hydration or persistent dryness;
-- temperature and activity trends;
-- oral or skin changes that persist over time;
-- movement or posture changes;
-- stress and fatigue patterns;
-- deviations from a user's personal baseline.
+- What is ordinary for this person?
+- What has changed?
+- Has the change persisted?
+- Is it worth surfacing now?
+- How uncertain is the observation?
 
-The important distinction is **baseline awareness**. Instead of asking only whether a measurement falls inside a population-wide reference range, the system can ask whether something is meaningfully different from this person's own recent normal.
+This is narrower than diagnosis and more useful than indiscriminate monitoring.
 
-## Intimacy as context, not a product category
+## Companionship is not just sensing
 
-Close physical interaction can be affectionate, comforting, romantic, sexual, caregiving, playful, or practical. This project treats consensual adult intimacy as one possible interaction context among many.
+A long-lived companion must also answer difficult HCI questions:
 
-A successful architecture should work across:
+- How does its behavior remain recognizable across time?
+- How much initiative is helpful before it becomes intrusive?
+- How does it make refusal and uncertainty understandable?
+- What happens when the underlying AI model changes?
+- Can relationship state survive hardware replacement or service migration?
+- How does the system remain safe when network, model, sensor, or actuator components fail?
 
-- hugs and comforting touch;
-- waking and bedtime routines;
-- recovery after illness or exertion;
-- oral and skin-care routines;
-- mobility and posture support;
-- affectionate partner interaction;
-- consensual adult intimacy.
+A technically capable sensor platform that users do not trust is not a successful companion.
 
-This prevents the system from becoming a single-purpose device and keeps health, companionship, and autonomy aligned.
+## Intimacy as one context
 
-## The companion should feel coherent
+Close interaction may include comforting touch, hugs, caregiving, romantic affection, or, for consenting adults, sexual intimacy.
 
-A physical companion should not behave like a vending machine for predefined interactions. It should maintain a coherent interaction state shaped by context: closeness, comfort, fatigue, initiative, caution, routine, and the user's current condition.
+Adult intimate interaction is therefore a legitimate future HCI context, but it is **not the core hypothesis** and must never be required to access essential health or safety functionality.
 
-The objective is not to claim that the system experiences human emotions. The objective is to make behavior legible and consistent enough that users can understand why it approaches, pauses, declines, suggests care, or changes tone.
+Early research should prefer lower-risk interaction contexts wherever they can answer the same question.
 
 ## Human-centered principles
 
-1. **The relationship is not the sensor.** Health monitoring must never become an excuse to coerce contact.
-2. **The user remains in control.** Sensitive sensing is opt-in, inspectable, and revocable.
-3. **The system may refuse.** Safety and contextual appropriateness matter more than unconditional compliance.
-4. **Everyday use should remain everyday.** Health support should fit naturally into routines instead of making the home feel clinical.
-5. **Professional care remains professional care.** The companion can notice, summarize, remind, and recommend; it should not casually overstep into diagnosis or treatment.
-6. **Privacy is architectural.** Intimate and health data should be minimized by design rather than protected only by policy.
+1. **The relationship is not the sensor.** Health support must not be used to pressure users into contact.
+2. **Personal baseline before medical claim.** The initial target is trend awareness, not automated diagnosis.
+3. **The user remains in control.** Sensitive sensing, memory, and sharing must be inspectable and revocable.
+4. **Physical agency raises the security bar.** Compromise of a robot can become a physical-safety problem, not only a privacy problem.
+5. **Continuity matters.** Model upgrades, hardware replacement, and service changes should not casually erase years of user-controlled relationship state.
+6. **Everyday use should remain everyday.** Helpful support should fit into routines without making the home feel permanently clinical.
+7. **Professional care remains professional care.** Any clinical extension requires evidence and specialist oversight.
+
+## What success would look like
+
+The project succeeds if it can show, step by step, that an embodied companion can:
+
+- maintain understandable behavioral continuity;
+- support user-controlled longitudinal baselines;
+- surface useful changes without excessive false alarms;
+- respect consent and privacy under adaptive behavior;
+- remain safe under hardware, software, and model failures;
+- preserve usefulness without demanding unnecessary data or intimacy.
 
 ## Long-term question
 
-The project is less interested in perfect biological imitation than in selective augmentation.
-
-A future embodied companion could be warmer, more adaptive, more hygienically consistent, more longitudinally attentive, and more accessible than a conventional device — while still respecting the fact that machines should not pretend to be human where that claim would be misleading.
-
-The central research question is:
-
-> **How can embodied AI support intimacy, wellbeing, and preventive health without sacrificing autonomy, dignity, safety, or trust?**
+> **How can embodied AI provide trustworthy long-term companionship and low-friction wellbeing support without sacrificing autonomy, safety, privacy, or continuity?**
