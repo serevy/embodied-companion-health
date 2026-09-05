@@ -47,7 +47,7 @@ Potential future domains include oral health, skin health, sexual health, richer
 - [`docs/system-architecture.md`](docs/system-architecture.md) — consolidated conceptual architecture
 - [`docs/affective-state-model.md`](docs/affective-state-model.md) — behavioral continuity as an open research problem
 - [`docs/preventive-health.md`](docs/preventive-health.md) — personal-baseline wellbeing support
-- [`docs/hygiene-and-fluid-management.md`](docs/hygiene-and-fluid-management.md) — high-level hygiene and contact-interface requirements
+- [`docs/hygiene-contact-interfaces.md`](docs/hygiene-contact-interfaces.md) — high-level hygiene and contact-interface requirements
 - [`docs/privacy-consent-ethics.md`](docs/privacy-consent-ethics.md) — privacy, consent, cyber-physical security, and lifecycle trust
 - [`docs/research-questions.md`](docs/research-questions.md) — five focused public research questions
 - [`docs/research-roadmap.md`](docs/research-roadmap.md) — staged path from software validation to advanced research
