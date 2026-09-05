@@ -1,173 +1,111 @@
 # Research Roadmap
 
-Embodied Companion Health is intentionally staged. The concept crosses AI, robotics, HCI, hygiene engineering, privacy, and potentially regulated health domains. Trying to solve everything at once would make both research and safety evaluation weaker.
+Embodied Companion Health crosses AI, HCI, robotics, privacy, safety, maintenance, and potentially regulated health domains. The project should therefore add complexity only when an earlier stage produces evidence that justifies it.
 
-The roadmap below starts with software-only work and progressively introduces physical embodiment and health-awareness.
+The roadmap is intentionally reduced to **four stages**.
 
-## Phase 0 — Concept and requirements
+## Stage A — Software validation
 
-**Goal:** define the problem before building hardware.
-
-Deliverables:
-
-- public vision and system boundaries;
-- use-case catalog;
-- consent and privacy model;
-- affective-state vocabulary;
-- preliminary risk register;
-- separation between wellness functions and clinical claims;
-- identification of areas that should remain private pending IP or safety review.
-
-Success means the project can explain what it is, what it is not, and why the architecture is trustworthy enough to prototype.
-
-## Phase 1 — Software companion simulation
-
-**Goal:** test interaction logic without a robot body.
-
-Prototype:
-
-- conversational companion;
-- persistent but bounded affective state;
-- routines for waking, meals, work, rest, and bedtime;
-- user-controlled wellness observations;
-- explicit consent state machine;
-- health trend summaries using synthetic or manually entered data.
-
-Research questions:
-
-- Does state-driven behavior feel more coherent than stateless generation?
-- Can the system proactively care without becoming annoying or paternalistic?
-- Are refusal and consent transitions understandable?
-- How much personal history is needed before the system feels consistent?
-
-## Phase 2 — Low-risk embodied interaction
-
-**Goal:** introduce physical presence without intimate or clinical functions.
-
-Prototype domains:
-
-- gaze and proximity;
-- safe touch and pressure sensing;
-- hand-holding or hugs;
-- compliant movement;
-- temperature-controlled contact surfaces;
-- emergency stop and fault handling.
-
-Research questions:
-
-- What latency makes touch responses feel natural?
-- How should a robot signal intent before approaching?
-- Which physical cues make refusal or disengagement legible?
-- How can contact remain comfortable across different users and body types?
-
-## Phase 3 — Everyday wellness sensing
-
-**Goal:** connect embodiment with low-risk preventive-health awareness.
-
-Possible domains:
-
-- sleep and recovery summaries;
-- posture and movement trends;
-- temperature and activity changes;
-- hydration reminders;
-- user-reported symptoms;
-- visible external changes when the user explicitly opts in.
-
-Research questions:
-
-- Can personal baselines reduce unnecessary alerts?
-- How should uncertainty be communicated?
-- Which observations are useful enough to justify data collection?
-- How much raw data can be discarded while preserving useful trends?
-
-## Phase 4 — Hygiene and replaceable contact systems
-
-**Goal:** validate maintenance architecture before higher-contact applications.
+**Goal:** test the core hypotheses without building a robot.
 
 Prototype areas:
 
-- removable contact modules;
-- sealed clean and waste paths;
-- leak and installation detection;
-- maintenance-state machine;
-- cartridge replacement workflows;
-- cleaning verification;
-- safe lockout when hygiene cannot be confirmed.
+- conversational companion behavior;
+- minimal persistent state for continuity;
+- explicit consent and permission state;
+- user-controlled personal baselines using synthetic or manually entered data;
+- uncertainty-aware wellbeing summaries;
+- simulation of model upgrades and relationship-state migration.
 
-Research questions:
+Key questions:
 
-- Can routine maintenance be made discreet and low-friction?
-- Which components should be disposable, replaceable, or washable?
-- How should the system communicate hygiene state without disrupting companionship?
+- Does persistent state measurably improve continuity?
+- Can proactive support remain useful without becoming annoying or paternalistic?
+- Can users understand and revoke permissions easily?
+- Can a model change occur without making the companion feel unrelated?
 
-## Phase 5 — Advanced close-contact HCI
+**Exit criterion:** demonstrate that continuity, consent, and baseline support create measurable value before physical embodiment is added.
 
-**Goal:** study richer adult and non-adult close-contact interaction under strict safety and consent controls.
+## Stage B — Low-risk embodied HCI
 
-This phase may include research into:
+**Goal:** determine where physical presence adds value that software alone cannot provide.
 
-- highly compliant artificial skin;
-- richer tactile sensing;
-- context-aware pressure response;
-- safe thermal and moisture control;
-- adult intimate interaction as one explicitly permissioned domain;
-- emotional-state transitions during high-closeness interaction.
+Prototype areas may include:
 
-Any adult intimate research must be restricted to consenting adults and should be evaluated with dedicated ethics and safety review.
+- gaze and proximity;
+- hand contact or hugs;
+- compliant low-force motion;
+- temperature-controlled contact surfaces;
+- basic touch and pressure sensing;
+- emergency stop;
+- maintenance-state communication.
 
-Research questions:
+Key questions:
 
-- Can the same physical architecture support comforting, caregiving, romantic, and adult intimate contexts without conflating them?
-- Does bounded autonomous initiative improve partner-like interaction?
-- Can health-awareness remain optional and non-coercive during close contact?
+- Which interactions genuinely benefit from a body?
+- What latency and compliance feel natural enough to justify hardware complexity?
+- How should the system signal approach, refusal, pause, and disengagement?
+- Can physical safety remain independent of the generative model?
 
-## Phase 6 — Clinically adjacent research
+**Exit criterion:** show a clear HCI benefit from embodiment under low-risk conditions.
 
-**Goal:** explore whether selected wellness signals justify formal clinical collaboration.
+## Stage C — Personal-baseline wellbeing study
 
-Before any diagnostic or therapeutic claim, the project would require:
+**Goal:** test whether embodiment and long-term context improve low-friction wellbeing support.
 
-- clinicians and domain specialists;
-- validated measurement protocols;
-- dataset governance;
-- safety and bias evaluation;
-- human-subject research oversight where applicable;
-- appropriate regulatory strategy.
+Initial domains should remain conservative, for example:
 
-Potential research areas might include screening or trend detection in oral health, skin health, mobility, hydration, or other domains — but only where evidence supports the transition.
+- sleep and recovery;
+- activity and mobility;
+- hydration-related routines;
+- fatigue;
+- temperature trends;
+- user-reported symptoms.
 
-## Phase 7 — Integrated companion platform
+Key questions:
 
-**Goal:** unify companionship, embodiment, hygiene, user-controlled health trends, and bounded autonomy into a coherent long-lived system.
+- Which signals are stable enough to support a personal baseline?
+- Can useful deviations be detected without excessive false alarms?
+- Does contextual timing improve adherence or trust?
+- How much raw data can be discarded while preserving value?
+- How should the system escalate uncertainty without implying diagnosis?
 
-The target is not a robot that performs the maximum number of functions.
+**Exit criterion:** evidence that longitudinal, within-person support adds value beyond ordinary reminders or standalone measurements.
 
-The target is a companion that:
+## Stage D — Advanced physical interaction and specialist collaboration
 
-- behaves consistently;
-- respects boundaries;
-- maintains itself safely;
-- notices useful changes;
-- communicates uncertainty;
-- improves daily life without demanding unnecessary data or dependence.
+**Goal:** expand only where earlier stages justify the cost and risk.
 
-## Parallel workstreams
+Possible research domains include:
 
-Across all phases, the following should progress continuously:
+- richer soft-robotic contact;
+- advanced hygiene and replaceable interfaces;
+- adult intimate interaction under explicit consent and dedicated safety review;
+- non-sexual close-contact interaction such as caregiving, recovery, or sleep support;
+- oral, skin, or sexual-health research with appropriate specialists;
+- clinically validated screening where evidence supports it.
 
-- threat modeling and privacy engineering;
+This stage is not a promise that every domain will be built. Each extension should have its own go/no-go decision based on usefulness, safety, ethics, regulation, and maintainability.
+
+**Exit criterion:** defined per specialist domain rather than by a single "complete humanoid" milestone.
+
+## Parallel requirements
+
+Across every stage:
+
+- privacy and threat modeling;
+- cyber-physical security;
 - accessibility;
-- mechanical safety;
-- adversarial testing of consent logic;
-- maintenance economics;
-- personalization without dependency manipulation;
-- interoperability with professional healthcare only when explicitly authorized;
-- intellectual-property review before publishing implementation-sensitive discoveries.
+- adversarial testing of consent and stop behavior;
+- complexity-versus-benefit review;
+- lifecycle and end-of-service planning;
+- model and hardware migration strategy;
+- IP review before publishing implementation-sensitive discoveries.
 
-## First practical milestone
+## Near-term practical milestone
 
-The most realistic near-term demonstrator is deliberately modest:
+The most credible first demonstrator remains deliberately modest:
 
-> **A software companion with a transparent affective-state model, user-controlled wellness baselines, consent-aware proactive behavior, and a simulated embodied interface.**
+> **A software companion with transparent continuity state, inspectable permissions, personal-baseline summaries, uncertainty-aware proactive behavior, and a simulated model-migration event.**
 
-That prototype can validate a large part of the concept before expensive robotics work begins.
+If that does not create measurable value, adding expensive humanoid hardware would be premature.
