@@ -110,6 +110,16 @@ Prefer a counterbalanced within-subject comparison for early studies so each par
 
 Warmth should remain secondary because it can be affected by wording style even when continuity is unchanged.
 
+### State-dependence audit
+
+Before treating Experiment A as evidence for continuity state, audit each scored scenario version before confirmatory outputs are observed.
+
+For each case, identify which previously established fact, preference, commitment, or unresolved context is necessary to distinguish the expected behavior. The current-session wording should not disclose that information directly, and the reset-state condition should retain at least two plausible behaviors when the missing state genuinely matters.
+
+If the reset-state condition can solve nearly every case from current-session cues alone, the benchmark is saturated. In that situation, good performance from the persistent-state condition demonstrates that the system can execute the task, but it does not demonstrate that persistence caused the success.
+
+Preserve the saturated run as evidence about the benchmark, then create a new version rather than editing the observed scenarios in place.
+
 ### Failure interpretation
 
 If persistence does not improve coherence, do not immediately add more state dimensions. First test whether the stored information was actually relevant to the scenarios.
