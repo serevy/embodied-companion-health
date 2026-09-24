@@ -28,6 +28,29 @@ Prefer evidence in this order:
 
 No single category is sufficient by itself.
 
+## Context-dependence and benchmark saturation
+
+When an experiment claims that persistent state, retrieved context, or another added information source caused better behavior, the benchmark must first demonstrate that the added information is actually needed.
+
+Before scored confirmatory output is observed for a benchmark version, record a bounded **context-dependence audit** for each scored case:
+
+- identify the prior state or project-specific context that supports the expected behavior;
+- verify that the current prompt or scenario does not simply restate the answer;
+- ensure that more than one response remains plausible when the relevant prior state is absent;
+- keep distractors or alternative behaviors plausible rather than obviously wrong;
+- record whether generic best practice or surface wording could reveal the expected answer without the manipulated state.
+
+A reset-state or no-context control is therefore a diagnostic instrument, not merely a weaker comparison condition. If that control saturates the benchmark, strong performance in the state-bearing condition does **not** establish that the added state preserved or improved behavior.
+
+When saturation, prompt leakage, or an unexpectedly easy benchmark is discovered:
+
+1. preserve the first-run result as diagnostic evidence;
+2. do not rewrite scenarios, labels, or scoring rules in place;
+3. harden the benchmark as a new version;
+4. freeze the revised cases and diagnostic criteria before the next scored confirmatory run.
+
+Mechanical success and high accuracy can validate the execution envelope while still failing to validate the research claim. The project should distinguish those outcomes explicitly.
+
 ## Engineering verification metrics
 
 The following are pass/fail requirements before human evaluation:
