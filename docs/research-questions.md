@@ -55,6 +55,7 @@ Physical embodiment should only be added where it creates measurable value.
 Questions include:
 
 - Which interaction benefits cannot be reproduced adequately by voice, screens, or wearables?
+- How reliably can the system track generic speaker activity, overlapping speech, and turn transitions in multi-party conversation without treating diarization labels as verified identity?
 - What response latency and compliance are required for comfortable low-risk touch?
 - How should intent, refusal, pause, and disengagement be signaled physically?
 - What hygiene and maintenance state must be visible to the user?
