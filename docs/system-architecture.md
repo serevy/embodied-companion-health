@@ -51,6 +51,25 @@ Key requirements:
 - context inference is reversible;
 - sensitive raw data is minimized.
 
+### Speaker-aware conversational perception
+
+Multi-party conversation benefits from a replaceable perception boundary that can represent **who spoke when**, overlapping speech, and turn transitions before higher-level conversational interpretation.
+
+A diarization component may emit generic speaker channels and timestamps, but those channels must not be treated as verified real-world identity. If identity binding is needed, speaker verification or another user-permitted signal should remain a separate step with its own uncertainty and privacy boundary.
+
+A provider-neutral observation may contain fields such as:
+
+- generic speaker channel;
+- activity interval or current activity state;
+- overlap state;
+- turn-start / turn-end evidence;
+- confidence or uncertainty;
+- source / model provenance and observation latency.
+
+Higher-level semantic logic may use these observations to propose listening, gaze, response-timing, or clarification states. It must not convert uncertain diarization into unsupported identity, consent, or safety authority.
+
+The concrete diarization backend should remain replaceable. Current related work includes NVIDIA Nemotron 3 Diarization, which supports streaming and offline diarization with generic speaker labels, and Voice Arena Diarization-Bench, whose methodology highlights evaluation across speaker count, overlap, acoustic conditions, boundary tolerance, and separate error components.
+
 ## 2. Personal baseline and trend layer
 
 This layer asks how current observations compare with the user's own recent normal.
@@ -116,6 +135,26 @@ Outputs may include:
 - maintenance requests.
 
 The research problem is coordination. A safe physical companion should not have speech, motion, touch, and refusal generated as unrelated channels.
+
+### Observe–propose–authorize–execute–reobserve boundary
+
+For adaptive actions, the project should distinguish **what the model proposes** from **what the system is allowed to execute**.
+
+A high-level control cycle is:
+
+```text
+Observation
+  -> bounded action proposal / abstention
+  -> deterministic permission, safety, and policy gate
+  -> constrained execution
+  -> re-observation and outcome verification
+```
+
+Action proposals should refer to the currently observed target and state rather than assuming that an earlier observation is still valid. If the target is ambiguous, stale, unsupported, or outside the allowed capability set, the system should remain able to abstain, clarify, or fail closed.
+
+This pattern is consistent with current specialist computer-use research such as CUA-S1, where planning and execution are separated and post-action state is re-observed. The public architecture adopts the **boundary pattern**, not a specific computer-use model or GUI-control implementation.
+
+For future physical embodiment, the same principle applies at a higher safety bar: a model proposal is not authorization, and successful delivery is not assumed until independently observable state confirms the outcome.
 
 ## 7. Lifecycle, cyber-physical security, and maintenance
 
